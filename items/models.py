@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Item(models.Model):
+    added_by = models.ForeignKey(User, default=1, on_delete=models.CASCADE)
     image = models.ImageField()
     name = models.CharField(max_length=120)
     description = models.TextField(max_length=255)
